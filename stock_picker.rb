@@ -1,25 +1,21 @@
 stock_prices = [5,40,2,9,15,29,1,20,58,5,120]
 
-def stock_picker(price_array)
-  difference = 0
-  max_and_min = []
+def stock_picker(prices)
+  max_profit = 0
+  best_day = []
 
-  (0...price_array.length).each do |i|
 
-    price_array.slice(i, price_array.length).each_with_index do |price, j|
-      new_difference = price - price_array[i]
+  (0...prices.length).each do |i|
+    (i + 1...prices.length).each do |j|
+      profit = prices[j] - prices[i]
 
-      if new_difference > difference
-        difference = new_difference
-
-        max_and_min[0] = i
-        max_and_min[1] = i + j
+      if profit > max_profit
+        max_profit = profit
+        best_day = [i, j]
       end
-    end
+    end 
   end
-  
-  max_and_min
-
+  best_day
 end
 
 p stock_picker(stock_prices)
