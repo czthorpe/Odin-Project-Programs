@@ -1,7 +1,7 @@
 
 CAPITAL = (65..90)
 LOWERCASE = (97..122)
-MESSAGE = "I have done a fart and it smells like meatballs..."
+MESSAGE = "Rigatoni macaroni conquistador tu tori tu tori..."
 MESSAGE1 = "asdaxaszzzz?@!?!@#!#!"
 
 def caesar_cipher(message, shift)
