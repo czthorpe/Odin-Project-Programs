@@ -1,16 +1,13 @@
-stock_prices = [5,40,200,9,15,29,1,20,58,5,120]
+stock_prices = [5,40,2,9,15,29,1,20,58,5,120]
 
-def stock_picker(prices)
+def stock_picker(price_array)
   difference = 0
   max_and_min = []
 
-  (0...prices.length).each do |i|
+  (0...price_array.length).each do |i|
 
-    sliced_arr = prices.slice(i, prices.length)
-
-    sliced_arr.each_with_index do |price, j|
-
-      new_difference = price - sliced_arr[0]
+    price_array.slice(i, price_array.length).each_with_index do |price, j|
+      new_difference = price - price_array[i]
 
       if new_difference > difference
         difference = new_difference
